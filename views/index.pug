@@ -1,0 +1,64 @@
+doctype html
+html
+    head
+        title Homepage
+        link(rel='stylesheet', href='/static/css/index.css')
+    body
+        .container
+            .navbar
+                nav
+                    a Link 1
+                    a Link 2
+                    a Link 3
+            .hero-container
+                span.hero-title Jacob Salway
+                .hero-subtext 
+                    span I'm a student at the University of Sydney and a casual data analyst at Domain. 
+                    span I'm an aspiring data scientist with an interest in analytics, maths and programming.
+            .about-container
+                .terminal       
+                    .terminal-header
+                        .header-button.red
+                        .header-button.yellow
+                        .header-button.green
+                    .terminal-window
+                        .statement
+                            .input-statement $location
+                            .output-statement "Sydney, Australia"
+                        .statement
+                            .input-statement $education
+                            .output-statement "Bachelor of Science - Data Science, Computer Science"
+                            .output-statement "University of Sydney"
+                            .output-statement "2018 - 2020"
+                        .statement
+                            .input-statement $contact
+                            .output-statement.array
+                                span
+                                    a(href="mailto:jacob.salway@gmail.com") jacob.salway@gmail.com
+                                span
+                                    a(href="https://linkedin.com/in/jacobsalway") LinkedIn
+                                span
+                                    a(href="https://github.com/xorana") github
+                        .statement
+                            .input-statement $skills
+                            .output-statement.array
+                                span R
+                                span Python
+                                span SQL
+                                span Java
+                                span JavaScript
+                            .output-statement.array
+                                span RStudio
+                                span Tableau
+                                span Git
+                                span Linux
+                        .statement
+                            .input-statement $interests
+                            .output-statement.array
+                                span data science and analytics
+                                span statistics
+                                span machine learning and AI
+                                span programming
+                                span finance and investment
+                                span korean
+                                span fitness
