@@ -40,10 +40,10 @@ jspm_packages/
 typings/
 
 # Built TS files
-dist/**/*
+dist/
 
 # Built SCSS files
-public/css
+public/css/
 
 # Optional npm cache directory
 .npm
