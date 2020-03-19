@@ -14,6 +14,6 @@ app.get("/", (req, res) => res.render("index"));
 
 app.get("/test", (req, res) => res.send("Hello world!"));
 
-const server = app.listen(port, () => {
+app.listen(port, () => {
     console.log("Server listening on port " + port);
 });
