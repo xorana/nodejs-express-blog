@@ -1,0 +1,38 @@
+.content {
+    max-width: 40rem;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.post {
+    padding-bottom: 2em;
+}
+
+.post-meta {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+.post-content * {
+    margin: 1em 0;
+}
+
+.post h1 {
+    font-size: 1.7rem;
+}
+
+.post h2 {
+    font-size: 1.3rem;
+}
+
+.post a {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.post pre {
+    padding: 1em;
+    background: #272822;
+    color: #F8F8F2;
+    font-family: Consolas, monospace;
+}
