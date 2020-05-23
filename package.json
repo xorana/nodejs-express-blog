@@ -8,7 +8,7 @@
     "clean": "rimraf dist/*",
     "lint": "eslint . --ext .ts",
     "tsc": "tsc",
-    "build": "npm-run-all clean lint tsc",
+    "build": "npm-run-all clean tsc",
     "dev:start": "npm-run-all build start",
     "dev": "nodemon --watch src -e ts --exec npm run dev:start",
     "start": "node .",
