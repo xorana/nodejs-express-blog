@@ -1,7 +1,7 @@
 doctype html
 html
     head
-        title Homepage
+        title Jacob Salway
         link(rel='stylesheet', href='/static/css/index.css')
     body
         .container
@@ -12,7 +12,10 @@ html
             .hero-container
                 span.hero-title Jacob Salway
                 .hero-subtext 
-                    span I'm a data analyst at Domain and a third-year student at the University of Sydney studying computer science and data science. 
+                    span 
+                        | I'm a data analyst at 
+                        a(href="https://domain.com.au") Domain
+                        |  and a third-year student at the University of Sydney studying computer science and data science. 
                     span I'm looking for opportunities in the field of data science and analytics and to gain experience while I complete my studies.
             .about-container
                 .terminal       
@@ -22,13 +25,17 @@ html
                         .header-button.green
                     .terminal-window
                         .statement
+                            .input-statement $work
+                            .output-statement "Data Analyst at Domain"
+                            .output-statement "10/2019 - present"
+                        .statement
                             .input-statement $location
                             .output-statement "Sydney, Australia"
                         .statement
                             .input-statement $education
                             .output-statement "Bachelor of Science - Data Science, Computer Science"
                             .output-statement "University of Sydney"
-                            .output-statement "2018 - 2021"
+                            .output-statement "2018 - 2020 (expected)"
                         .statement
                             .input-statement $contact
                             .output-statement.array

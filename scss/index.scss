@@ -15,6 +15,14 @@ body {
     font-family: 'Verdana', sans-serif;
 }
 
+a {
+    color: $highlight-text;
+    text-decoration: none;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
 .container {
     max-width: 1000px;
     margin: 0 auto;
@@ -32,8 +40,12 @@ nav {
 }
 
 nav a {
+    color: black;
     margin: 0 10px;
     padding: 3px 4px;
+    &:hover {
+        text-decoration: none;
+    }
 }
 
 .hero-container {
@@ -142,6 +154,5 @@ nav a {
     }
     & a {
         color: #35feff;
-        text-decoration: none;
     }
 }
