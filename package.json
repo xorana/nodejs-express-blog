@@ -4,7 +4,8 @@
   "description": "",
   "main": "dist/app.js",
   "scripts": {
-    "scss": "node-sass --watch scss -o public/css",
+    "scss-build": "node-sass scss -o public/css",
+    "scss-watch": "node-sass --watch scss -o public/css",
     "clean": "rimraf dist/*",
     "lint": "eslint . --ext .ts",
     "tsc": "tsc",
