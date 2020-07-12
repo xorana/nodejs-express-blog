@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 export default (db: string) => {
     const connect = () => {
-        mongoose.connect(db)
+        mongoose.connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
         .then(() => {
             return console.info('Sucessfully connected to ${db}');
         })
