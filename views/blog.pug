@@ -3,6 +3,8 @@ html
     head
         title Homepage
         link(rel='stylesheet', href='/static/css/blog.css')
+        link(rel='icon', href='/static/favicon.ico')
+        meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1')
     body
         .navbar
             nav
@@ -12,14 +14,17 @@ html
                     a Blog
                     a Portfolio
         .content
-            each post in posts
-                .post
-                    h1
-                        a= post.title
-                    .post-meta
-                        span= post.time
-                    .post-content
-                        each line in post.content
-                            p= line
-                    .post-read-more
-                        a Read more →
+            if posts.length > 0
+                each post in posts
+                    .post
+                        h1
+                            a= post.title
+                        .post-meta
+                            span= post.time
+                        .post-content
+                            each line in post.content
+                                p= line
+                        .post-read-more
+                            a Read more →
+            else
+                span No blog content yet.

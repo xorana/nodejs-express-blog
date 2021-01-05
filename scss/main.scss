@@ -9,7 +9,7 @@
 .container {
     max-width: 1000px;
     margin: 0 auto;
-    padding: 0 40px 2em 40px;
+    padding: 0 40px 2rem 40px;
 }
 
 .navbar {
@@ -17,7 +17,7 @@
 }
 
 nav {
-    width: 1000px;
+    max-width: 1000px;
 }
 
 .hero-container {
@@ -27,10 +27,10 @@ nav {
 .hero-title {
     font-family: Ubuntu Mono, monospace;
     color: $highlight-text;
-    font-size: 4.5em;
-    padding-right: 0.1em;
+    font-size: 4.5rem;
+    padding-right: 0.5rem;
     overflow: hidden;
-    border-right: 0.5em solid $highlight;
+    border-right: 2.5rem solid $highlight;
     animation: blink-caret 1s step-end infinite;
     &:before {
         content: '> ';
@@ -39,12 +39,12 @@ nav {
 
 .hero-subtext {
     margin: 6vh 0;
-    font-size: 1.2em;
+    font-size: 1.2rem;
 }
 
 .about-container {
     margin: 6vh auto 0 auto;
-    font-size: 1.1em;
+    font-size: 1.1rem;
 }
 
 .terminal {
