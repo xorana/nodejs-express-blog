@@ -1,0 +1,57 @@
+$highlight: rgba(116, 127, 224, 0.65);
+$highlight-text: #747fe0;
+
+@font-face {
+    font-family: 'Inter';
+    font-weight: 100 900;
+    font-display: swap;
+    font-style: normal;
+    font-named-instance: 'Regular';
+    src: url("/static/Inter-roman.var.woff2") format("woff2");
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    font-family: 'Inter', sans-serif;
+    text-rendering: optimizeLegibility
+}
+
+a {
+    color: $highlight-text;
+    text-decoration: none;
+    &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+    }
+}
+
+.navbar {
+    background: #eeeeee;
+}
+
+nav {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 45rem;
+    padding: 20px 0 20px 0;
+}
+
+nav {
+    .left {
+        font-weight: bold;
+    }
+    .right a {
+        margin: 0 15px 0 0;
+    }
+    a {
+        color: black;
+        &:last-child {
+            margin: 0;
+            padding-right: 0;
+        }
+    }
+}

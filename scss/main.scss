@@ -1,26 +1,9 @@
-// colours
-$highlight: rgba(116, 127, 224, 0.65);
-$highlight-text: #747fe0;
+@import './common';
 
 // keyframes
 @keyframes blink-caret {
     from, to {border-color: transparent}
     50% {border-color: $highlight}
-}
-
-body {
-    margin: 0;
-    padding: 0;
-    background-color: #f6f9fc;
-    font-family: 'Verdana', sans-serif;
-}
-
-a {
-    color: $highlight-text;
-    text-decoration: none;
-    &:hover {
-        text-decoration: underline;
-    }
 }
 
 .container {
@@ -30,22 +13,11 @@ a {
 }
 
 .navbar {
-    display: flex;
-    justify-content: flex-end;
-    margin: 0 auto;
+    background: none;
 }
 
 nav {
-    margin-top: 2em;
-}
-
-nav a {
-    color: black;
-    margin: 0 10px;
-    padding: 3px 4px;
-    &:hover {
-        text-decoration: none;
-    }
+    width: 1000px;
 }
 
 .hero-container {

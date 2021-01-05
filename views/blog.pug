@@ -2,15 +2,24 @@ doctype html
 html
     head
         title Homepage
-        link(rel='stylesheet', href='/static/css/index.css')
         link(rel='stylesheet', href='/static/css/blog.css')
     body
+        .navbar
+            nav
+                .left
+                    a(href='/') jacobsalway.com
+                .right
+                    a Blog
+                    a Portfolio
         .content
             each post in posts
                 .post
-                    h1= post.title
+                    h1
+                        a= post.title
                     .post-meta
                         span= post.time
                     .post-content
                         each line in post.content
                             p= line
+                    .post-read-more
+                        a Read more →

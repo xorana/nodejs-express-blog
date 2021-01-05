@@ -1,11 +1,13 @@
+@import './common';
+
 .content {
-    max-width: 40rem;
+    max-width: 45rem;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding-top: 2rem;
 }
 
 .post {
-    padding-bottom: 2em;
+    padding-bottom: 3em;
 }
 
 .post-meta {
@@ -13,21 +15,17 @@
     border-bottom: 1px solid rgba(0,0,0,0.2);
 }
 
-.post-content * {
-    margin: 1em 0;
+.post-read-more {
+    font-weight: bold;
 }
 
 .post h1 {
-    font-size: 1.7rem;
-}
-
-.post h2 {
-    font-size: 1.3rem;
-}
-
-.post a {
-    cursor: pointer;
-    text-decoration: underline;
+    font-size: 2.2rem;
+    margin: 0 0 0.75rem 0;
+    a {
+        text-decoration: none;
+        color: black;
+    }
 }
 
 .post pre {
