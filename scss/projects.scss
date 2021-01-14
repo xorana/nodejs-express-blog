@@ -1,0 +1,32 @@
+@import './common';
+
+.content {
+    width: 95%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-top: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.project {
+    background: grey;
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 50px 100px rgba(50,50,93,.05), 
+        0 15px 35px rgba(50,50,93,.1), 
+        0 5px 15px rgba(0,0,0,.1);
+}
+
+.project-image {
+    min-width: 200px;
+    height: 100%;
+    background: black;
+}
+
+.project-content {
+    padding: 20px;
+}

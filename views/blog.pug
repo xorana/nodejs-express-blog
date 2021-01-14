@@ -1,7 +1,7 @@
 doctype html
 html
     head
-        title Homepage
+        title Blog
         link(rel='stylesheet', href='/static/css/blog.css')
         link(rel='icon', href='/static/favicon.ico')
         meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1')
@@ -11,20 +11,20 @@ html
                 .left
                     a(href='/') jacobsalway.com
                 .right
-                    a Blog
+                    a(href='/blog') Blog
                     a Portfolio
         .content
             if posts.length > 0
                 each post in posts
                     .post
                         h1
-                            a= post.title
+                            a(href=`/blog/${post.id}`)= post.title
                         .post-meta
-                            span= post.time
+                            span= "Posted on " + post.time
                         .post-content
                             each line in post.content
                                 p= line
                         .post-read-more
-                            a Read more →
+                            a(href=`/blog/${post.id}`) Read more →
             else
                 span No blog content yet.
