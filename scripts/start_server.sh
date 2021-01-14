@@ -1,3 +1,3 @@
 #!/bin/bash
 cd ~
-npm run serve
+pm2 startOrReload npm --name "jacobsalway.com" -- run serve
