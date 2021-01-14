@@ -1,4 +1,5 @@
 #!/bin/bash
+cd ~
 pm2 describe jacobsalway.com > /dev/null
 RUNNING=$?
 if [ "${RUNNING}" -eq 0 ]; then
