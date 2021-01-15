@@ -10,6 +10,9 @@
     max-width: 1000px;
     margin: 0 auto;
     padding: 0 40px 2rem 40px;
+    @media (max-width: 800px) {
+        padding: 0 20px 2rem 20px;
+    }
 }
 
 .navbar {
@@ -35,11 +38,19 @@ nav {
     &:before {
         content: '> ';
     }
+    @media (max-width:800px) {
+        & {
+            font-size: 3rem;
+        }
+    }
 }
 
 .hero-subtext {
     margin: 6vh 0;
     font-size: 1.2rem;
+    @media (max-width: 800px) {
+        font-size: 1.05rem;
+    }
 }
 
 .about-container {
@@ -50,9 +61,13 @@ nav {
 .terminal {
     border-radius: 5px;
     overflow: hidden;
+    font-size: 1.1rem;
     box-shadow: 0 50px 100px rgba(50,50,93,.05), 
         0 15px 35px rgba(50,50,93,.1), 
         0 5px 15px rgba(0,0,0,.1);
+    @media (max-width: 800px) {
+        font-size: 1.05rem;
+    }
 }
 
 .terminal-header {

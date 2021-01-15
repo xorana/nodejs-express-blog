@@ -7,13 +7,17 @@ $highlight-text: #747fe0;
     src: url("/static/Inter-roman.var.woff2") format("woff2");
 }
 
+html {
+    overflow-y: overlay;
+    font-size: 1rem;
+}
+
 body {
     margin: 0;
     padding: 0;
     background-color: white;
     font-family: 'Inter', sans-serif;
     text-rendering: optimizeLegibility;
-    font-size: 1rem;
 }
 
 a {

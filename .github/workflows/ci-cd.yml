@@ -4,29 +4,42 @@ on:
   push:
     branches:
       - master
+    paths:
+      - 'scripts/**'
+      - 'appspec.yml'
+      - 'public/**'
+      - 'scss/**'
+      - 'src/**'
+      - 'views/**'
+      - 'package*.json'
+      - 'tsconfig.json'
 
 jobs:
-  buildAndTest:
+  build-and-test:
     name: CI Pipeline
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: ['12.x']
+        node-version: 
 
     steps:
       - uses: actions/checkout@v2
 
-      # Initialize Node.js
-      - name: Install Node.js ${{ matrix.node-version }}
+      - name: Install Node.js 12.x
         uses: actions/setup-node@v1
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: '12.x'
 
-      # Install project dependencies, test and build
+      - uses: c-hive/gha-npm-cache@v1
+
       - name: Install dependencies
-        run: npm install
-      - name: Run build
+        run: npm ci
+
+      - name: Build
         run: npm run build
+
+      # - name: Test
+      #   run: npm run test
 
   deploy:
     name: CD Pipeline
@@ -34,7 +47,6 @@ jobs:
     strategy:
       matrix:
         python-version: [3.8]
-        node-version: ['12.x']
         appname: ['jacobsalway.com']
         deploy-group: ['dev']
         s3-bucket: ['aws-codedeploy-deployments-823666162236']
@@ -44,25 +56,25 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      # Initialize Node.js
-      - name: Install Node.js ${{ matrix.node-version }}
+      - name: Install Node.js 12.x
         uses: actions/setup-node@v1
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: '12.x'
 
-      # Install project dependencies and build
+      - uses: c-hive/gha-npm-cache@v1
+
       - name: Install dependencies
-        run: npm install
-      - name: Run build
+        run: npm ci
+
+      - name: Build
         run: npm run build
 
-      # Install AWS CLI 2
       - name: Install AWS CLI 2
         run: |
           curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
           unzip awscliv2.zip
           sudo ./aws/install
-      # Configure AWS credentials
+
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
@@ -70,7 +82,6 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ap-southeast-2
 
-      # Deploy push to AWS S3
       - name: AWS Deploy push
         run: |
           aws deploy push \
@@ -79,7 +90,7 @@ jobs:
           --ignore-hidden-files \
           --s3-location s3://${{ matrix.s3-bucket }}/${{ matrix.s3-filename }}.zip \
           --source .
-      # Create deployment to CodeDeploy
+
       - name: AWS Create Deployment
         run: |
           aws deploy create-deployment \
