@@ -43,19 +43,11 @@ jobs:
     needs: build-and-test
     steps:
       - uses: actions/checkout@v2
-        with:
-          path: '${{ matrix.appname }}'
 
       - name: Install Node.js 12.x
         uses: actions/setup-node@v1
         with:
           node-version: '12.x'
-
-      - name: Move into app directory
-        run: |
-          ls .
-          ls ${{ matrix.appname }}
-          cd ${{ matrix.appname }}
 
       - uses: c-hive/gha-npm-cache@v1
 
@@ -70,15 +62,12 @@ jobs:
           rm -rf node_modules/
           npm ci --production
 
-      - name: Move back to working directory
-        run: |
-          cd ..
-
       - name: Install AWS CLI 2
         run: |
           curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
           unzip awscliv2.zip
           sudo ./aws/install
+          rm -rf awscliv2.zip aws
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
@@ -94,7 +83,7 @@ jobs:
           --description "This is a revision for the ${{ matrix.appname }}-${{ github.sha }}" \
           --ignore-hidden-files \
           --s3-location s3://${{ matrix.s3-bucket }}/${{ matrix.s3-filename }}.zip \
-          --source ${{ matrix.appname }}
+          --source .
 
       - name: AWS Create Deployment
         run: |
