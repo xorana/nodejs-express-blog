@@ -53,6 +53,8 @@ jobs:
 
       - name: Move into app directory
         run: |
+          ls .
+          ls ${{ matrix.appname }}
           cd ${{ matrix.appname }}
 
       - uses: c-hive/gha-npm-cache@v1
