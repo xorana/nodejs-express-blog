@@ -40,7 +40,7 @@ jobs:
         s3-bucket: ['aws-codedeploy-deployments-823666162236']
         s3-filename: ['dev-aws-codedeploy-${{ github.sha }}']
 
-    needs: buildAndTest
+    needs: build-and-test
     steps:
       - uses: actions/checkout@v2
 
