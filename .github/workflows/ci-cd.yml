@@ -4,15 +4,6 @@ on:
   push:
     branches:
       - master
-    paths:
-      - 'scripts/**'
-      - 'appspec.yml'
-      - 'public/**'
-      - 'scss/**'
-      - 'src/**'
-      - 'views/**'
-      - 'package*.json'
-      - 'tsconfig.json'
 
 jobs:
   build-and-test:
