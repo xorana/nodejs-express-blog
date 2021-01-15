@@ -1,0 +1,17 @@
+services:
+    nodejs:
+        build: .
+        command: npm run watch
+        volumes:
+            - ./src:/app/src
+        environment:
+            - MONGO_HOSTNAME=mongodb
+        ports:
+            - "4000:4000"
+        depends_on:
+            - mongo
+        
+    mongo:
+        image: mongo
+        ports:
+            - "27017:27017"

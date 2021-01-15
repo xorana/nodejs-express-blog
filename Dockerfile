@@ -1,17 +1,9 @@
 FROM node:12
 
-# create app dir
-WORKDIR /usr/src/app
-
-# install app dependencies
+WORKDIR /app
 COPY package*.json ./
 RUN npm install
-
-# bundle app source
 COPY . .
-
-EXPOSE 4000
-
-RUN npm install
 RUN npm run build
-CMD ["npm", "run", "start"]
+EXPOSE 4000
+CMD ["npm", "run", "serve"]
