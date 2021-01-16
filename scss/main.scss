@@ -40,7 +40,8 @@ nav {
     }
     @media (max-width:800px) {
         & {
-            font-size: 3rem;
+            font-size: 2.5rem;
+            border-right: 1.5rem solid $highlight;
         }
     }
 }

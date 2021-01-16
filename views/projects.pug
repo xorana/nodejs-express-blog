@@ -3,6 +3,7 @@ html
     head
         title Projects
         link(rel='stylesheet', href='/static/css/projects.css')
+        link(rel='stylesheet', href='/static/fontawesome/css/all.css')
         link(rel='icon', href='/static/favicon.ico')
         meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1')
     body
@@ -16,9 +17,17 @@ html
         .content
             .project
                 .project-image
+                    .blur
                 .project-content
                     h3 Project heading
                     p This is some project content that I'm typing for filler but what if it doesn't work?
+                    .project-skills
+                        span HTML
+                        span CSS
+                    .project-links
+                        a
+                            i.fab.fa-github
+                            |  View source
             .project
                 .project-image
                 .project-content

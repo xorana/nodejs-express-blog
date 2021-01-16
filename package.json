@@ -5,7 +5,7 @@
   "main": "dist/app.js",
   "scripts": {
     "build": "npm run build-scss && npm run build-ts && npm run lint",
-    "build-scss": "node-sass scss -o public/css",
+    "build-scss": "node-sass scss -o public/css --output-style compressed",
     "build-ts": "tsc",
     "clean": "rimraf dist/*",
     "lint": "eslint . --ext .ts",
