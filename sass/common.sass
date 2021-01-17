@@ -1,0 +1,45 @@
+$highlight: rgba(116, 127, 224, 0.65)
+$highlight-text: #747fe0
+
+@font-face
+    font-family: 'Inter'
+    font-weight: 100 900
+    src: url("/static/Inter-roman.var.woff2") format("woff2")
+
+html
+    overflow-y: overlay
+    font-size: 1rem
+
+body
+    margin: 0
+    padding: 0
+    background-color: white
+    font-family: 'Inter', sans-serif
+    text-rendering: optimizeLegibility
+
+a
+    color: $highlight-text
+    text-decoration: none
+    &:hover
+        text-decoration: underline
+        cursor: pointer
+
+.navbar
+    background: #eee;
+
+nav
+    margin: 0 auto
+    display: flex
+    justify-content: space-between
+    align-items: center
+    max-width: 800px
+    padding: 1rem
+    .left
+        font-weight: bold
+    .right a
+        margin: 0 1rem 0 0
+    a
+        color: black
+        &:last-child
+            margin: 0
+            padding-right: 0
