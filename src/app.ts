@@ -1,5 +1,5 @@
 import compression from "compression";
-import express, { NextFunction, Request, Response } from "express";
+import express, { Request, Response } from "express";
 import path from "path";
 import connect from "./connect";
 import blog from "./routes/blog";
@@ -27,19 +27,12 @@ app.get("/projects", (req, res) => {
     res.render("projects");
 });
 
-// 404
-app.use((req: Request, res: Response, next: NextFunction) => {
-    const err = new Error('Not found');
-    res.status(404);
-    next(err);
-});
-
 // 500
-app.use((err: Error, req: Request, res: Response) => {
-    res.status(res.statusCode || 500);
+app.use((req: Request, res: Response) => {
+    res.status(404);
     res.render('error', {
         code: res.statusCode,
-        message: err ? err.message : 'An error occurred'
+        message: 'An error occurred'
     });
 })
 

@@ -1,5 +1,6 @@
 import { Router } from "express";
 import { LoremIpsum } from "lorem-ipsum";
+import { nextTick } from "process";
 import Post, { IPost } from '../models/post.model';
 
 const lorem = new LoremIpsum({
@@ -46,9 +47,13 @@ router.get("/blog", (req, res) => {
     });
 });
 
-router.get("/blog/:id", (req, res) => {
+router.get("/blog/:id", (req, res, next) => {
     Post.findOne({urlId: req.params.id}).exec((err, model) => {
-        if (!err) res.render("post", {post: createPostObject(model)});
+        if (!err && model) {
+            res.render("post", {post: createPostObject(model)});
+        } else {
+            next();
+        }
     });
 });
 
