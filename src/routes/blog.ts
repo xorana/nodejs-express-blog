@@ -1,6 +1,5 @@
 import { Router } from "express";
 import { LoremIpsum } from "lorem-ipsum";
-import { nextTick } from "process";
 import Post, { IPost } from '../models/post.model';
 
 const lorem = new LoremIpsum({
@@ -23,7 +22,14 @@ const formatDate = (date: Date): string => {
     return `${day} ${month}, ${year}`;
 }
 
-const createPostObject = (model: IPost) => {
+interface PostObject {
+    id: string;
+    title: string;
+    time: string;
+    content: [string];
+}
+
+const createPostObject = (model: IPost): PostObject => {
     return {
         id: model.urlId,
         title: model.title,
