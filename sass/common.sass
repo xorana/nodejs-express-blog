@@ -1,10 +1,14 @@
-$highlight: rgba(116, 127, 224, 0.65)
+$highlight: rgb(116, 127, 224)
 $highlight-text: #747fe0
 
 @font-face
     font-family: 'Inter'
     font-weight: 100 900
     src: url("/static/Inter-roman.var.woff2") format("woff2")
+
+@font-face
+    font-family: 'Ubuntu Mono'
+    src: url("/static/ubuntu-mono-v10-latin-regular.woff2") format("woff2")
 
 html
     overflow-y: overlay
@@ -14,7 +18,8 @@ body
     margin: 0
     padding: 0
     background-color: white
-    font-family: 'Inter', sans-serif
+    font-family: 'Open Sans', sans-serif
+    font-family: 100 
     text-rendering: optimizeLegibility
 
 a
