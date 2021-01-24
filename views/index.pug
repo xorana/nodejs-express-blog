@@ -1,3 +1,5 @@
+include mixins/mixins.pug
+
 doctype html
 html
     head
@@ -7,12 +9,7 @@ html
         meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1')
     body
         .container
-            .navbar
-                nav
-                    .left
-                    .right
-                        a(href='/blog') Blog
-                        a(href='/projects') Projects
+            +nav(true)
             .hero-container
                 span.hero-title Jacob Salway
                 .hero-subtext 

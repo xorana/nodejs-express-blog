@@ -1,0 +1,9 @@
+mixin nav(homepage=false)
+    .navbar
+        nav
+            .left
+                if !homepage
+                    a(href='/') jacobsalway.com
+            .right
+                a(href='/blog') Blog
+                a(href='/projects') Projects
