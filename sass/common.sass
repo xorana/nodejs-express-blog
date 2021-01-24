@@ -1,14 +1,33 @@
 $highlight: rgb(116, 127, 224)
 $highlight-text: #747fe0
 
-@font-face
-    font-family: 'Inter'
-    font-weight: 100 900
-    src: url("/static/Inter-roman.var.woff2") format("woff2")
+@font-face 
+    font-family: 'Open Sans'
+    font-style: normal
+    font-weight: 300
+    src: local(''), url('/static/fonts/open-sans-v18-latin-300.woff2') format('woff2'), url('/static/fonts/open-sans-v18-latin-300.woff') format('woff')
+
+@font-face 
+    font-family: 'Open Sans'
+    font-style: normal
+    font-weight: 400
+    src: local(''), url('/static/fonts/open-sans-v18-latin-regular.woff2') format('woff2'), url('/static/fonts/open-sans-v18-latin-regular.woff') format('woff')
+
+@font-face 
+    font-family: 'Open Sans'
+    font-style: normal
+    font-weight: 600
+    src: local(''), url('/static/fonts/open-sans-v18-latin-600.woff2') format('woff2'), url('/static/fonts/open-sans-v18-latin-600.woff') format('woff')
+
+@font-face 
+    font-family: 'Open Sans'
+    font-style: normal
+    font-weight: 700
+    src: local(''), url('/static/fonts/open-sans-v18-latin-700.woff2') format('woff2'), url('/static/fonts/open-sans-v18-latin-700.woff') format('woff')
 
 @font-face
     font-family: 'Ubuntu Mono'
-    src: url("/static/ubuntu-mono-v10-latin-regular.woff2") format("woff2")
+    src: url("/static/fonts/ubuntu-mono-v10-latin-regular.woff2") format("woff2")
 
 html
     overflow-y: overlay
@@ -19,7 +38,6 @@ body
     padding: 0
     background-color: white
     font-family: 'Open Sans', sans-serif
-    font-family: 100 
     text-rendering: optimizeLegibility
 
 a
@@ -30,7 +48,7 @@ a
         cursor: pointer
 
 .navbar
-    background: #eee;
+    background: #eee
 
 nav
     margin: 0 auto
