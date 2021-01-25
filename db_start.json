@@ -1,0 +1,117 @@
+{
+    "terminal": [
+        {
+            "input": "work",
+            "outputs": [
+                "Technical Data Analyst at Domain",
+                "Data Analyst at Domain"
+            ]
+        },
+        {
+            "input": "location",
+            "outputs": [
+                "Sydney, Australia"
+            ]
+        },
+        {
+            "input": "education",
+            "outputs": [
+                "Bachelor of Science - Computer Science, Data Science",
+                "University of Sydney",
+                "2018 - 2021 Sem 1 (expected)"
+            ]
+        },
+        {
+            "input": "contact",
+            "outputs": [
+                [
+                    "[jacob.salway@gmail.com](mailto:jacob.salway@gmail.com)",
+                    "[LinkedIn](https://www.linkedin.com/in/jacobsalway/)",
+                    "[Github](https://github.com/xorana)"
+                ]
+            ]
+        },
+        {
+            "input": "skills",
+            "outputs": [
+                [
+                    "Python",
+                    "R",
+                    "SQL",
+                    "Java",
+                    "C",
+                    "Javascript + Typescript",
+                    "HTML",
+                    "CSS"
+                ],
+                [
+                    "Snowflake",
+                    "MongoDB",
+                    "PostgreSQL"
+                ],
+                [
+                    "Linux",
+                    "Bash",
+                    "Vim",
+                    "Docker",
+                    "Tableau",
+                    "RStudio"
+                ]
+            ]
+        },
+        {
+            "input": "interests",
+            "outputs": [
+                [
+                    "data science and analytics",
+                    "statistics",
+                    "programming",
+                    "web dev"
+                ]
+            ]
+        }
+    ],
+    "homepage": {
+        "name": "Jacob Salway",
+        "description": "I'm a technical data analyst at Domain and a student at the University of Sydney in the final semester of my computer science and data science degree. I like programming and working across the data space including machine learning, data science and data engineering. Check out some of my side projects or my blog."
+    },
+    "projects": [
+        {
+            "title": "jacobsalway.com",
+            "image": "Untitled.png",
+            "description": "This website! A personal website built with Node.js, Typescript and Express with Pug for page templates, SASS for styling and the website contents in MongoDB. Hosted on EC2 with a CI/CD pipeline implemented using Github Actions and CodeDeploy.",
+            "skills": [
+                "Javascript",
+                "Typescript",
+                "HTML",
+                "CSS",
+                "MongoDB",
+                "EC2",
+                "CodeDeploy"
+            ],
+            "sourceLink": "https://github.com/xorana/nodejs-express-blog"
+        },
+        {
+            "title": "Implied interest rate pipeline and dashboard",
+            "image": "dashboard.png",
+            "description": "A data pipeline orchestrated using Lambda that extracts implied interest rate data from ASX PDFs using OCR and stores the result in S3. Also created a Tableau dashboard to visualise the data using an Athena connector.",
+            "skills": [
+                "Python",
+                "Lambda",
+                "S3",
+                "Athena",
+                "Tableau"
+            ],
+            "sourceLink": "https://github.com/xorana/rba-implied-interest-rate-lambda"
+        },
+        {
+            "title": "Zeloxa - the game",
+            "image": "game.png",
+            "description": "A simple 2D platformer-ish game I made in high school using pygame. The objective is just to reach the other side of the level while avoiding the enemies. There are three levels defined in a text format, allowing custom platform and enemy placement.",
+            "skills": [
+                "Python"
+            ],
+            "sourceLink": "https://github.com/xorana/zeloxa"
+        }
+    ]
+}
