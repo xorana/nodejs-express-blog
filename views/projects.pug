@@ -25,61 +25,9 @@ html
                                         span= skill
                             .project-links
                                 if project.demoLink
-                                    a(href=`${project.demoLink}`)
+                                    a(href=`${project.demoLink}`, target='_blank')
                                         i.fa.fa-external-link-alt
                                         |  Live demo
-                                a(href=`${project.sourceLink}`)
+                                a(href=`${project.sourceLink}`, target='_blank')
                                     i.fab.fa-github
                                     |  View source
-            .project
-                .project-image(style='background-image: url(/static/Untitled.png)')
-                    .blur
-                .project-content
-                    h3 jacobsalway.com
-                    p This website! A personal website built with Node.js, Typescript and Express with Pug for page templates, SASS for styling and the website contents in MongoDB. Hosted on EC2 with a CI/CD pipeline implemented using Github Actions and CodeDeploy.
-                    .project-skills
-                        span Javascript
-                        span Typescript
-                        span HTML
-                        span CSS
-                        span MongoDB
-                        span EC2
-                        span CodeDeploy
-                    .project-links
-                        a
-                            i.fa.fa-external-link-alt
-                            |  Live demo
-                        a
-                            i.fab.fa-github
-                            |  View source
-            .project
-                .project-image(style='background-image: url(/static/dashboard.png)')
-                    .blur
-                .project-content
-                    h3 Implied interest rate pipeline and dashboard
-                    p A data pipeline orchestrated using Lambda that extracts implied interest rate data from ASX PDFs using OCR and stores the result in S3. Also created a Tableau dashboard to visualise the data using an Athena connector.
-                    .project-skills
-                        span Python
-                        span Lambda
-                        span S3
-                        span Athena
-                        span Tableau
-                    .project-links
-                        a
-                            i.fa.fa-external-link-alt
-                            |  Live demo
-                        a
-                            i.fab.fa-github
-                            |  View source
-            .project
-                .project-image(style='background-image: url(/static/game.png)')
-                    .blur
-                .project-content
-                    h3 Zeloxa - the game
-                    p A simple 2D platformer-ish game I made in high school using pygame. The objective is just to reach the other side of the level while avoiding the enemies. There are three levels defined in a text format, allowing custom platform and enemy placement.
-                    .project-skills
-                        span Python
-                    .project-links
-                        a
-                            i.fab.fa-github
-                            |  View source

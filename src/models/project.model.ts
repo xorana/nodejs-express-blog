@@ -6,7 +6,7 @@ export interface Project {
     description: string;
     skills: string[];
     demoLink?: string;
-    sourceLink: string;
+    sourceLink?: string;
 }
 
 interface ProjectSchema extends Project, Document {}
@@ -17,7 +17,7 @@ const ProjectSchema: Schema = new Schema({
     description: {type: String, required: true},
     skills: {type: [String], required: true},
     demoLink: {type: String, required: false},
-    sourceLink: {type: String, required: true}
+    sourceLink: {type: String, required: false}
 })
 
 export default mongoose.model<ProjectSchema>('Project', ProjectSchema);

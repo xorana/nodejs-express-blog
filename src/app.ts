@@ -1,13 +1,19 @@
 import compression from "compression";
+import * as dotenv from 'dotenv';
 import express, { Request, Response } from "express";
 import path from "path";
 import connect from "./connect";
+import HomepageSchema from './models/homepage.model';
+import ProjectSchema from "./models/project.model";
+import CommandSchema from './models/terminal.model';
 import blog from "./routes/blog";
 
-const app = express();
-const port = 4000;
+dotenv.config({ path: __dirname + '/.env' });
 
-connect('mongodb://127.0.0.1:27017');
+const app = express();
+const port = process.env.PORT || 4000;
+
+connect(process.env.DB);
 
 app.use(compression());
 
@@ -17,14 +23,31 @@ app.set("views", path.join(__dirname, "../views"));
 app.set("view engine", "pug");
 
 // index page
-app.get("/", (req, res) => res.render("index"));
+app.get("/", async (req, res, next) => {
+    try {
+        const homepage = await HomepageSchema.findOne().exec();
+        const terminal = await CommandSchema.find().exec();
+        res.render('index', {
+            title: homepage.name,
+            description: homepage.description,
+            terminal: terminal
+        });
+    } catch (err) {
+        next();
+    }
+});
 
 // blog routes
 app.use("/", blog);
 
 // project routes
-app.get("/projects", (req, res) => {
-    res.render("projects");
+app.get("/projects", async (req, res, next) => {
+    try {
+        const projects = await ProjectSchema.find().exec();
+        res.render('projects', {projects: projects});
+    } catch (err) {
+        next();
+    }
 });
 
 // 500
