@@ -5,6 +5,8 @@ on:
     branches:
       - master
 
+environment: dev
+
 jobs:
   build-and-test:
     name: CI Pipeline
@@ -12,6 +14,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+
+      - name: Test env secret
+        run: echo ${{ secrets.TEST_SECRET }}
 
       - name: Install Node.js 12.x
         uses: actions/setup-node@v1
