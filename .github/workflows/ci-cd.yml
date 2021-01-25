@@ -5,12 +5,11 @@ on:
     branches:
       - master
 
-environment: dev
-
 jobs:
   build-and-test:
     name: CI Pipeline
     runs-on: ubuntu-latest
+    environment: dev
 
     steps:
       - uses: actions/checkout@v2
