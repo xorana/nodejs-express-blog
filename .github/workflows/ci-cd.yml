@@ -53,13 +53,6 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Touch environment secrets
-        run: |
-          rm -f .env
-          touch .env
-          echo PORT=${{ secrets.PORT }} >> .env
-          echo DB=${{ secrets.DB }} >> .env
-
       - name: Build
         run: npm run build
 
@@ -67,9 +60,6 @@ jobs:
         run: |
           rm -rf node_modules/
           npm ci --production
-
-      - name: Copy env variables to build dir
-        run: npm run copy-env
 
       - name: Install AWS CLI 2
         run: |
@@ -84,6 +74,18 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ap-southeast-2
+
+      - name: Touch environment secrets
+        run: |
+          rm -f env
+          touch env
+          echo PORT=${{ secrets.PORT }} >> env
+          echo DB=${{ secrets.DB }} >> env
+      
+      - name: Encrypt environment secrets
+        run: |
+          aws kms encrypt --key-id ${{ secrets.AWS_KMS_KEY_ID }} --plaintext $(cat env | base64) --query CiphertextBlob --output text | base64 -d | base64 -w 76 > env.asc
+          rm -f env
 
       - name: AWS Deploy push
         run: |
