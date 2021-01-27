@@ -1,17 +1,16 @@
 import { Router } from "express";
-import { LoremIpsum } from "lorem-ipsum";
 import PostSchema, { PostObject } from '../models/post.model';
 
-const lorem = new LoremIpsum({
-    sentencesPerParagraph: {
-        max: 8,
-        min: 4
-    },
-    wordsPerSentence: {
-        max: 16,
-        min: 4
-    }
-});
+// const lorem = new LoremIpsum({
+//     sentencesPerParagraph: {
+//         max: 8,
+//         min: 4
+//     },
+//     wordsPerSentence: {
+//         max: 16,
+//         min: 4
+//     }
+// });
 
 const router: Router = Router();
 
@@ -32,25 +31,6 @@ router.get("/blog/:id", (req, res, next) => {
             next();
         }
     });
-});
-
-router.get("/emptyblog", (req, res) => {
-    PostSchema.find().remove().exec(err => {
-        if (!err) res.json({deleted: true});
-    })
-});
-
-router.get("/addpost", async (req, res) => {
-    const postObj = {
-        title: 'Post title',
-        id: lorem.generateWords(3).replace(/\s+/g, '-').toLowerCase(),
-        time: Date.now(),
-        content: lorem.generateParagraphs(20).split('\n')
-    }
-    const post = new PostSchema(postObj);
-
-    await post.save();
-    res.json(postObj);
 });
 
 export default router;
