@@ -4,7 +4,7 @@ cd ~/jacobsalway.com
 # decrypt environment key
 source keyid
 rm -f .env
-aws kms decrypt --key-id $KEY --ciphertext-blog $(cat env.asc) --query Plaintext | tr -d '"' | base64 -d > .env
+aws kms decrypt --key-id $KEY --ciphertext-blob $(cat env.asc) --query Plaintext | tr -d '"' | base64 -d > .env
 
 # source env variables
 source .env
