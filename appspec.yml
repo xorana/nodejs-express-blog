@@ -4,6 +4,12 @@ files:
   - source: /
     destination: /home/ec2-user/jacobsalway.com
 permissions:
+  - object: /home/ec2-user
+    pattern: jacobsalway.com
+    owner: ec2-user
+    group: ec2-user
+    type:
+      - directory
   - object: /home/ec2-user/jacobsalway.com
     owner: ec2-user
     group: ec2-user
