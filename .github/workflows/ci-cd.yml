@@ -61,7 +61,7 @@ jobs:
           echo DB=${{ secrets.DB }} >> env
           echo STATIC_BUCKET=${{ secrets.STATIC_BUCKET }} >> env
           echo KEY=${{ secrets.AWS_KMS_KEY_ID }} > keyid
-          aws kms encrypt --key-id ${{ secrets.AWS_KMS_KEY_ID }} --plaintext $(cat env | base64) --query CiphertextBlob --output text > env.asc
+          aws kms encrypt --key-id ${{ secrets.AWS_KMS_KEY_ID }} --plaintext $(cat env | base64 -w 0) --query CiphertextBlob --output text > env.asc
           rm -f env
 
       - name: AWS Deploy push
