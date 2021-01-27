@@ -2,7 +2,7 @@
 cd ~/jacobsalway.com
 
 # decrypt environment key
-source keyid.file
+source keyid
 rm -f .env
 aws kms decrypt --key-id $KEY --ciphertext-blog $(cat env.asc) --query Plaintext | tr -d '"' | base64 -d > .env
 
