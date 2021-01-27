@@ -10,8 +10,8 @@ aws kms decrypt --key-id $KEY --ciphertext-blob $(cat env.asc) --query Plaintext
 source .env
 
 # pull static content
-aws s3 cp -r s3://$STATIC_BUCKET static/
+aws s3 sync s3://$STATIC_BUCKET static/
 
 # move static content into public folder
 mkdir -p public
-cp -r static/* public
+cp -r static public
