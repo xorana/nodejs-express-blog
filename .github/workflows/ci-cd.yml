@@ -59,8 +59,8 @@ jobs:
           touch env
           echo PORT=${{ secrets.PORT }} >> env
           echo DB=${{ secrets.DB }} >> env
-          cat env
-          aws kms encrypt --key-id ${{ secrets.AWS_KMS_KEY_ID }} --plaintext $(cat env | base64) --query CiphertextBlob --output text | base64 -d | base64 -w 76 > env.asc
+          echo KEY=${{ secrets.AWS_KMS_KEY_ID }} > keyid
+          aws kms encrypt --key-id ${{ secrets.AWS_KMS_KEY_ID }} --plaintext $(cat env | base64) --query CiphertextBlob --output text > env.asc
           rm -f env
 
       - name: AWS Deploy push
