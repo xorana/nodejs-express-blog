@@ -35,7 +35,7 @@
     "fs": "0.0.1-security",
     "lorem-ipsum": "^2.0.3",
     "mongoose": "^5.11.9",
-    "pug": "^2.0.4"
+    "pug": "^3.0.1"
   },
   "devDependencies": {
     "@types/compression": "^1.7.0",
